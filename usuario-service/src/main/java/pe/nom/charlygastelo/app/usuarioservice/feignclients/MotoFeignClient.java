@@ -7,7 +7,7 @@ import pe.nom.charlygastelo.app.usuarioservice.modelos.Moto;
 
 import java.util.List;
 
-@FeignClient(name="moto-service",url="http://localhost:8071")
+@FeignClient(name="moto-service")
 @RequestMapping("/moto")
 public interface MotoFeignClient {
     @PostMapping
