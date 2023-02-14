@@ -3,6 +3,6 @@ spring:
     name: usuario-service
   cloud:
     config:
-      enabled:  true
-      uri: https://localhost:8111
+      enabled: true
+      uri: http://localhost:8111
 
