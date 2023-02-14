@@ -1,2 +1,8 @@
-server.port=8131
-spring.application.name=moto-service
+spring:
+  application:
+    name: moto-service
+  cloud:
+    config:
+      enabled:  true
+      uri: https://localhost:8131
+
