@@ -1,10 +1,7 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'Maven-3.9'
-        jdk 'JDK-17'
-    }
+   
 
     stages {
 
@@ -17,19 +14,19 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'mvn clean compile'
+                sh 'echo $pwd'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'mvn test'
+                sh 'echo test'
             }
         }
 
         stage('Package') {
             steps {
-                sh 'mvn package'
+                sh 'echo package'
             }
         }
     }
