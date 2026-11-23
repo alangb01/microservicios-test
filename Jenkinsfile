@@ -7,8 +7,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/usuario/demo-app.git'
+                checkout scm
             }
         }
 
