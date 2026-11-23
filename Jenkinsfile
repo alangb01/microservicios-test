@@ -30,17 +30,7 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                sh 'echo test'
-            }
-        }
-
-        stage('Package') {
-            steps {
-                sh 'echo package'
-            }
-        }
+       
     }
 
     post {
@@ -52,8 +42,8 @@ pipeline {
             echo 'Build falló'
         }
 
-        always {
-            archiveArtifacts artifacts: 'target/*.jar'
-        }
+        // always {
+        //     archiveArtifacts artifacts: 'target/*.jar'
+        // }
     }
 }
