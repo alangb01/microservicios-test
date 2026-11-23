@@ -1,13 +1,26 @@
 pipeline {
     agent any
 
-   
+    environment {
+        IMAGE_NAME = "mi-laravel-app"
+        IMAGE_TAG = "${BUILD_NUMBER}"
+    }
+
+    parameters {
+        string(
+            name: 'BRANCH',
+            defaultValue: 'main',
+            description: 'Rama a desplegar'
+        )
+    }
 
     stages {
 
         stage('Checkout') {
             steps {
-                checkout scm
+                git branch: params.BRANCH,
+                    credentialsId: '6612df2f-a302-4247-852d-e4f65757e35f',
+                    url: 'https://github.com/alangb01/microservicios-test.git'
             }
         }
 
